@@ -8,10 +8,12 @@ using namespace std;
 using namespace cv;
 
 int main() {
-    arquivo = fopen("C:/Users/User/Desktop/GIT/LapiscoComputerVisionRepo/images/Results/q10_image.txt", "r");
+    FILE*arquivo;
+    arquivo = fopen("C:/Users/User/Desktop/GIT/LapiscoComputerVisionRepo/images/Results/image.txt", "r");
     char val[5000];
     int  val2, linhas = -1, colunas = -1;
     int x, y;
+
     //Pegar quantidade de Linhas//
     while (!feof(arquivo)) {
         fgets(val, 5000, arquivo);
@@ -19,7 +21,7 @@ int main() {
     }
     fclose(arquivo);
     //Pegar quantidade de Colunas//
-    arquivo = fopen("/Users/wellcome/Desktop/PDI_LISTA/image.txt", "r");
+    arquivo = fopen("C:/Users/User/Desktop/GIT/LapiscoComputerVisionRepo/images/Results/image.txt", "r");
     while (!feof(arquivo)) {
         fscanf(arquivo, "%d", &val2);
         colunas++;
@@ -27,7 +29,7 @@ int main() {
     colunas = colunas / linhas;
     fclose(arquivo);
     //Pegar do arquivo e criar imagem//
-    arquivo = fopen("/Users/wellcome/Desktop/PDI_LISTA/image.txt", "r");
+    arquivo = fopen("C:/Users/User/Desktop/GIT/LapiscoComputerVisionRepo/images/Results/image.txt", "r");
     Mat_<uchar> img(linhas, colunas, 1);
     for (y = 0; y < linhas; y++)
     {
